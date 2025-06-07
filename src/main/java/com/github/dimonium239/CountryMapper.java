@@ -7,6 +7,7 @@ public class CountryMapper {
     public static Map<String, String> isoAlpha2ToCountryName() {
         Map<String, String> map = new HashMap<>();
 
+        map.put("EU27_2020", "EU");
         map.put("AL", "Albania");
         map.put("AD", "Andorra");
         map.put("AT", "Austria");

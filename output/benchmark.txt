@@ -1,2 +1,2 @@
-| Lokalny (1 wątek)         |      10667 ms |
-| Lokalny (16)              |       4367 ms |
+| Lokalny (1 wątek)         |      11425 ms |
+| Lokalny (16)              |       5102 ms |

@@ -1,197 +1,197 @@
 === RAPORT SEZONOWOŚCI DLA KAŻDEGO KRAJU ===
 
-Kraj: null
-  Średnia liczba zgonów zimą (max): 69464
-  Średnia liczba zgonów latem (min): 53497
-  Różnica sezonowa: 15967
------------------------------
-Kraj: Italy
-  Średnia liczba zgonów zimą (max): 9855
-  Średnia liczba zgonów latem (min): 7347
-  Różnica sezonowa: 2508
+Kraj: EU
+  Sezon z najwyższą średnią zgonów: Winter (66827)
+  Sezon z najniższą średnią zgonów: Summer (54515)
+  Różnica sezonowa: 12312
 -----------------------------
 Kraj: Germany
-  Średnia liczba zgonów zimą (max): 12581
-  Średnia liczba zgonów latem (min): 10554
-  Różnica sezonowa: 2026
+  Sezon z najwyższą średnią zgonów: Winter (12463)
+  Sezon z najniższą średnią zgonów: Summer (10640)
+  Różnica sezonowa: 1823
+-----------------------------
+Kraj: Italy
+  Sezon z najwyższą średnią zgonów: Winter (9465)
+  Sezon z najniższą średnią zgonów: Summer (7714)
+  Różnica sezonowa: 1751
 -----------------------------
 Kraj: France
-  Średnia liczba zgonów zimą (max): 8720
-  Średnia liczba zgonów latem (min): 6915
-  Różnica sezonowa: 1805
+  Sezon z najwyższą średnią zgonów: Winter (8551)
+  Sezon z najniższą średnią zgonów: Summer (6964)
+  Różnica sezonowa: 1588
 -----------------------------
 Kraj: Spain
-  Średnia liczba zgonów zimą (max): 6147
-  Średnia liczba zgonów latem (min): 4419
-  Różnica sezonowa: 1729
+  Sezon z najwyższą średnią zgonów: Winter (5788)
+  Sezon z najniższą średnią zgonów: Summer (4645)
+  Różnica sezonowa: 1142
 -----------------------------
 Kraj: Poland
-  Średnia liczba zgonów zimą (max): 5500
-  Średnia liczba zgonów latem (min): 4535
-  Różnica sezonowa: 964
+  Sezon z najwyższą średnią zgonów: Winter (5479)
+  Sezon z najniższą średnią zgonów: Summer (4606)
+  Różnica sezonowa: 874
 -----------------------------
 Kraj: Romania
-  Średnia liczba zgonów zimą (max): 3971
-  Średnia liczba zgonów latem (min): 3088
-  Różnica sezonowa: 883
+  Sezon z najwyższą średnią zgonów: Winter (3892)
+  Sezon z najniższą średnią zgonów: Summer (3120)
+  Różnica sezonowa: 772
 -----------------------------
 Kraj: Portugal
-  Średnia liczba zgonów zimą (max): 1720
-  Średnia liczba zgonów latem (min): 1191
-  Różnica sezonowa: 529
------------------------------
-Kraj: null
-  Średnia liczba zgonów zimą (max): 1888
-  Średnia liczba zgonów latem (min): 1435
-  Różnica sezonowa: 453
+  Sezon z najwyższą średnią zgonów: Winter (1642)
+  Sezon z najniższą średnią zgonów: Summer (1229)
+  Różnica sezonowa: 413
 -----------------------------
 Kraj: Netherlands
-  Średnia liczba zgonów zimą (max): 2236
-  Średnia liczba zgonów latem (min): 1810
-  Różnica sezonowa: 426
+  Sezon z najwyższą średnią zgonów: Winter (2223)
+  Sezon z najniższą średnią zgonów: Summer (1816)
+  Różnica sezonowa: 407
 -----------------------------
 Kraj: Bulgaria
-  Średnia liczba zgonów zimą (max): 1666
-  Średnia liczba zgonów latem (min): 1247
-  Różnica sezonowa: 419
------------------------------
-Kraj: Serbia
-  Średnia liczba zgonów zimą (max): 1528
-  Średnia liczba zgonów latem (min): 1179
-  Różnica sezonowa: 349
+  Sezon z najwyższą średnią zgonów: Winter (1621)
+  Sezon z najniższą średnią zgonów: Summer (1289)
+  Różnica sezonowa: 332
 -----------------------------
 Kraj: Hungary
-  Średnia liczba zgonów zimą (max): 1867
-  Średnia liczba zgonów latem (min): 1521
-  Różnica sezonowa: 346
+  Sezon z najwyższą średnią zgonów: Winter (1859)
+  Sezon z najniższą średnią zgonów: Summer (1553)
+  Różnica sezonowa: 305
 -----------------------------
 Kraj: Belgium
-  Średnia liczba zgonów zimą (max): 1564
-  Średnia liczba zgonów latem (min): 1238
-  Różnica sezonowa: 325
+  Sezon z najwyższą średnią zgonów: Winter (1532)
+  Sezon z najniższą średnią zgonów: Summer (1254)
+  Różnica sezonowa: 277
+-----------------------------
+Kraj: EL
+  Sezon z najwyższą średnią zgonów: Winter (1803)
+  Sezon z najniższą średnią zgonów: Autumn (1527)
+  Różnica sezonowa: 277
+-----------------------------
+Kraj: Serbia
+  Sezon z najwyższą średnią zgonów: Winter (1486)
+  Sezon z najniższą średnią zgonów: Summer (1218)
+  Różnica sezonowa: 268
 -----------------------------
 Kraj: Czech Republic
-  Średnia liczba zgonów zimą (max): 1604
-  Średnia liczba zgonów latem (min): 1303
-  Różnica sezonowa: 301
+  Sezon z najwyższą średnią zgonów: Winter (1568)
+  Sezon z najniższą średnią zgonów: Summer (1311)
+  Różnica sezonowa: 257
 -----------------------------
 Kraj: Sweden
-  Średnia liczba zgonów zimą (max): 1298
-  Średnia liczba zgonów latem (min): 1056
-  Różnica sezonowa: 242
+  Sezon z najwyższą średnią zgonów: Winter (1271)
+  Sezon z najniższą średnią zgonów: Summer (1062)
+  Różnica sezonowa: 209
 -----------------------------
 Kraj: Austria
-  Średnia liczba zgonów zimą (max): 1135
-  Średnia liczba zgonów latem (min): 936
-  Różnica sezonowa: 199
------------------------------
-Kraj: null
-  Średnia liczba zgonów zimą (max): 709
-  Średnia liczba zgonów latem (min): 525
-  Różnica sezonowa: 184
------------------------------
-Kraj: null
-  Średnia liczba zgonów zimą (max): 486
-  Średnia liczba zgonów latem (min): 306
-  Różnica sezonowa: 180
+  Sezon z najwyższą średnią zgonów: Winter (1123)
+  Sezon z najniższą średnią zgonów: Summer (943)
+  Różnica sezonowa: 179
 -----------------------------
 Kraj: Switzerland
-  Średnia liczba zgonów zimą (max): 920
-  Średnia liczba zgonów latem (min): 745
-  Różnica sezonowa: 175
+  Sezon z najwyższą średnią zgonów: Winter (898)
+  Sezon z najniższą średnią zgonów: Summer (748)
+  Różnica sezonowa: 150
+-----------------------------
+Kraj: GE
+  Sezon z najwyższą średnią zgonów: Winter (698)
+  Sezon z najniższą średnią zgonów: Summer (557)
+  Różnica sezonowa: 141
 -----------------------------
 Kraj: Croatia
-  Średnia liczba zgonów zimą (max): 760
-  Średnia liczba zgonów latem (min): 609
-  Różnica sezonowa: 151
+  Sezon z najwyższą średnią zgonów: Winter (744)
+  Sezon z najniższą średnią zgonów: Summer (623)
+  Różnica sezonowa: 121
 -----------------------------
 Kraj: Slovakia
-  Średnia liczba zgonów zimą (max): 770
-  Średnia liczba zgonów latem (min): 638
-  Różnica sezonowa: 132
------------------------------
-Kraj: Ireland
-  Średnia liczba zgonów zimą (max): 484
-  Średnia liczba zgonów latem (min): 359
-  Różnica sezonowa: 125
+  Sezon z najwyższą średnią zgonów: Winter (760)
+  Sezon z najniższą średnią zgonów: Summer (645)
+  Różnica sezonowa: 115
 -----------------------------
 Kraj: Denmark
-  Średnia liczba zgonów zimą (max): 758
-  Średnia liczba zgonów latem (min): 636
-  Różnica sezonowa: 122
+  Sezon z najwyższą średnią zgonów: Winter (749)
+  Sezon z najniższą średnią zgonów: Summer (644)
+  Różnica sezonowa: 106
+-----------------------------
+Kraj: Ireland
+  Sezon z najwyższą średnią zgonów: Winter (463)
+  Sezon z najniższą średnią zgonów: Summer (363)
+  Różnica sezonowa: 101
 -----------------------------
 Kraj: Lithuania
-  Średnia liczba zgonów zimą (max): 591
-  Średnia liczba zgonów latem (min): 477
-  Różnica sezonowa: 114
------------------------------
-Kraj: Norway
-  Średnia liczba zgonów zimą (max): 602
-  Średnia liczba zgonów latem (min): 494
-  Różnica sezonowa: 108
------------------------------
-Kraj: Albania
-  Średnia liczba zgonów zimą (max): 355
-  Średnia liczba zgonów latem (min): 252
-  Różnica sezonowa: 103
------------------------------
-Kraj: Finland
-  Średnia liczba zgonów zimą (max): 726
-  Średnia liczba zgonów latem (min): 624
-  Różnica sezonowa: 102
------------------------------
-Kraj: Latvia
-  Średnia liczba zgonów zimą (max): 436
-  Średnia liczba zgonów latem (min): 343
+  Sezon z najwyższą średnią zgonów: Winter (583)
+  Sezon z najniższą średnią zgonów: Summer (490)
   Różnica sezonowa: 93
 -----------------------------
+Kraj: Norway
+  Sezon z najwyższą średnią zgonów: Winter (584)
+  Sezon z najniższą średnią zgonów: Summer (495)
+  Różnica sezonowa: 89
+-----------------------------
+Kraj: Finland
+  Sezon z najwyższą średnią zgonów: Winter (714)
+  Sezon z najniższą średnią zgonów: Summer (628)
+  Różnica sezonowa: 86
+-----------------------------
+Kraj: AM
+  Sezon z najwyższą średnią zgonów: Winter (409)
+  Sezon z najniższą średnią zgonów: Summer (333)
+  Różnica sezonowa: 77
+-----------------------------
+Kraj: Latvia
+  Sezon z najwyższą średnią zgonów: Winter (427)
+  Sezon z najniższą średnią zgonów: Summer (355)
+  Różnica sezonowa: 72
+-----------------------------
+Kraj: Albania
+  Sezon z najwyższą średnią zgonów: Winter (341)
+  Sezon z najniższą średnią zgonów: Summer (269)
+  Różnica sezonowa: 72
+-----------------------------
 Kraj: Slovenia
-  Średnia liczba zgonów zimą (max): 284
-  Średnia liczba zgonów latem (min): 227
-  Różnica sezonowa: 58
+  Sezon z najwyższą średnią zgonów: Winter (280)
+  Sezon z najniższą średnią zgonów: Summer (229)
+  Różnica sezonowa: 50
 -----------------------------
 Kraj: Estonia
-  Średnia liczba zgonów zimą (max): 236
-  Średnia liczba zgonów latem (min): 192
-  Różnica sezonowa: 44
+  Sezon z najwyższą średnią zgonów: Winter (232)
+  Sezon z najniższą średnią zgonów: Summer (196)
+  Różnica sezonowa: 37
 -----------------------------
 Kraj: Cyprus
-  Średnia liczba zgonów zimą (max): 101
-  Średnia liczba zgonów latem (min): 70
-  Różnica sezonowa: 31
------------------------------
-Kraj: Montenegro
-  Średnia liczba zgonów zimą (max): 94
-  Średnia liczba zgonów latem (min): 75
-  Różnica sezonowa: 20
+  Sezon z najwyższą średnią zgonów: Winter (96)
+  Sezon z najniższą średnią zgonów: Summer (73)
+  Różnica sezonowa: 22
 -----------------------------
 Kraj: Malta
-  Średnia liczba zgonów zimą (max): 59
-  Średnia liczba zgonów latem (min): 40
-  Różnica sezonowa: 19
+  Sezon z najwyższą średnią zgonów: Winter (57)
+  Sezon z najniższą średnią zgonów: Summer (42)
+  Różnica sezonowa: 15
+-----------------------------
+Kraj: Montenegro
+  Sezon z najwyższą średnią zgonów: Winter (89)
+  Sezon z najniższą średnią zgonów: Summer (77)
+  Różnica sezonowa: 12
 -----------------------------
 Kraj: Luxembourg
-  Średnia liczba zgonów zimą (max): 56
-  Średnia liczba zgonów latem (min): 47
-  Różnica sezonowa: 10
+  Sezon z najwyższą średnią zgonów: Winter (56)
+  Sezon z najniższą średnią zgonów: Summer (47)
+  Różnica sezonowa: 9
 -----------------------------
 Kraj: Iceland
-  Średnia liczba zgonów zimą (max): 28
-  Średnia liczba zgonów latem (min): 24
-  Różnica sezonowa: 4
+  Sezon z najwyższą średnią zgonów: Winter (27)
+  Sezon z najniższą średnią zgonów: Summer (24)
+  Różnica sezonowa: 3
 -----------------------------
 Kraj: Andorra
-  Średnia liczba zgonów zimą (max): 5
-  Średnia liczba zgonów latem (min): 3
+  Sezon z najwyższą średnią zgonów: Winter (4)
+  Sezon z najniższą średnią zgonów: Summer (3)
   Różnica sezonowa: 1
 -----------------------------
 Kraj: Liechtenstein
-  Średnia liczba zgonów zimą (max): 4
-  Średnia liczba zgonów latem (min): 3
-  Różnica sezonowa: 1
+  Sezon z najwyższą średnią zgonów: Winter (3)
+  Sezon z najniższą średnią zgonów: Summer (3)
+  Różnica sezonowa: 0
 -----------------------------
-Kraj: null
-  Średnia liczba zgonów zimą (max): null
-  Średnia liczba zgonów latem (min): null
-  Różnica sezonowa: null
+Kraj: UK
+  Sezon z najwyższą średnią zgonów: null (0)
+  Sezon z najniższą średnią zgonów: null (0)
+  Różnica sezonowa: 0
 -----------------------------

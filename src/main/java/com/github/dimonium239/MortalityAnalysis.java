@@ -1,6 +1,9 @@
 package com.github.dimonium239;
 
 import org.apache.spark.sql.*;
+import org.apache.spark.sql.api.java.UDF1;
+import org.apache.spark.sql.types.DataTypes;
+import scala.collection.mutable.Seq;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -26,20 +29,18 @@ public class MortalityAnalysis {
         Dataset<Row> longFormat = reshapeData(raw);
         Dataset<Row> parsed = parseWeeks(longFormat);
         Dataset<Row> aggregated = aggregateMonthly(parsed);
-        Dataset<Row> seasonality = computeSeasonality(aggregated);
 
-        // Wyświetl przykładowe dane
         System.out.println("=== Miesięczna średnia liczba zgonów ===");
         aggregated.show(20, false);
 
-        System.out.println("=== Wskaźnik sezonowości (największe różnice) ===");
+        Dataset<Row> seasonality = computeSeasonalityBySeason(aggregated);
+
+        System.out.println("=== Sezonowość wg sezonów ===");
         seasonality.show(20, false);
 
-        // Zapis danych
         aggregated.write().option("header", true).mode("overwrite").csv(outputDir + "/monthly_avg");
-        seasonality.write().option("header", true).mode("overwrite").csv(outputDir + "/seasonality");
+        seasonality.write().option("header", true).mode("overwrite").csv(outputDir + "/seasonality_by_season");
 
-        // Raport tekstowy
         generateReport(seasonality, outputDir + "/raport.txt");
     }
 
@@ -85,14 +86,64 @@ public class MortalityAnalysis {
                 .orderBy("country", "month");
     }
 
-    private Dataset<Row> computeSeasonality(Dataset<Row> monthlyAgg) {
-        return monthlyAgg.groupBy("country")
-                .agg(
-                        max("avg_deaths").alias("max_avg"),
-                        min("avg_deaths").alias("min_avg")
-                )
-                .withColumn("seasonality_index", col("max_avg").minus(col("min_avg")))
+    // Metoda wyliczająca sezonowość na podstawie sezonów
+    private Dataset<Row> computeSeasonalityBySeason(Dataset<Row> monthlyAgg) {
+        // Dodajemy kolumnę season na podstawie miesiąca
+        Dataset<Row> withSeason = monthlyAgg.withColumn("season", expr(
+                "CASE " +
+                        "WHEN month IN (12, 1, 2) THEN 'Winter' " +
+                        "WHEN month IN (3, 4, 5) THEN 'Spring' " +
+                        "WHEN month IN (6, 7, 8) THEN 'Summer' " +
+                        "WHEN month IN (9, 10, 11) THEN 'Autumn' " +
+                        "END"));
+
+        // Grupujemy po kraju i sezonie, liczymy średnią zgonów w sezonie
+        Dataset<Row> seasonalAvg = withSeason.groupBy("country", "season")
+                .agg(avg("avg_deaths").alias("season_avg_deaths"));
+
+        // Teraz pivotujemy by mieć wiersz na kraj i kolumny dla sezonów
+        Dataset<Row> pivot = seasonalAvg.groupBy("country")
+                .pivot("season", java.util.Arrays.asList("Winter", "Spring", "Summer", "Autumn"))
+                .agg(first("season_avg_deaths"));
+
+        // Obliczamy max, min i ich nazwy sezonów oraz indeks sezonowości
+        // Najpierw array z sezonami i wartościami dla łatwego porównania
+        Dataset<Row> withMaxMin = pivot.withColumn("season_values", array(
+                struct(lit("Winter").alias("season"), col("Winter").alias("value")),
+                struct(lit("Spring").alias("season"), col("Spring").alias("value")),
+                struct(lit("Summer").alias("season"), col("Summer").alias("value")),
+                struct(lit("Autumn").alias("season"), col("Autumn").alias("value"))
+        ));
+
+        spark.udf().register("getMaxSeason", (UDF1<Seq<Row>, String>) arr -> {
+            Row maxRow = null;
+            for (int i = 0; i < arr.size(); i++) {
+                Row r = arr.apply(i);
+                if (r.isNullAt(1)) continue;
+                if (maxRow == null || r.getDouble(1) > maxRow.getDouble(1)) maxRow = r;
+            }
+            return maxRow == null ? null : maxRow.getString(0);
+        }, DataTypes.StringType);
+
+        spark.udf().register("getMinSeason", (UDF1<Seq<Row>, String>) arr -> {
+            Row minRow = null;
+            for (int i = 0; i < arr.size(); i++) {
+                Row r = arr.apply(i);
+                if (r.isNullAt(1)) continue;
+                if (minRow == null || r.getDouble(1) < minRow.getDouble(1)) minRow = r;
+            }
+            return minRow == null ? null : minRow.getString(0);
+        }, DataTypes.StringType);
+
+        Dataset<Row> withSeasons = withMaxMin
+                .withColumn("max_season", callUDF("getMaxSeason", col("season_values")))
+                .withColumn("min_season", callUDF("getMinSeason", col("season_values")))
+                .withColumn("max_value", expr("filter(season_values, x -> x.season = max_season)[0].value"))
+                .withColumn("min_value", expr("filter(season_values, x -> x.season = min_season)[0].value"))
+                .withColumn("seasonality_index", col("max_value").minus(col("min_value")))
                 .orderBy(col("seasonality_index").desc());
+
+        return withSeasons.select("country", "max_season", "max_value", "min_season", "min_value", "seasonality_index");
     }
 
     private void generateReport(Dataset<Row> seasonality, String outputPath) {
@@ -103,16 +154,18 @@ public class MortalityAnalysis {
 
         for (Row row : rows) {
             String country = row.getAs("country");
-            Double maxVal = row.getAs("max_avg");
-            Double minVal = row.getAs("min_avg");
+            String maxSeason = row.getAs("max_season");
+            Double maxVal = row.getAs("max_value");
+            String minSeason = row.getAs("min_season");
+            Double minVal = row.getAs("min_value");
             Double index = row.getAs("seasonality_index");
 
             String line = String.format(
-                    "Kraj: %s\n  Średnia liczba zgonów zimą (max): %d\n  Średnia liczba zgonów latem (min): %d\n  Różnica sezonowa: %d\n-----------------------------\n",
-                    CountryMapper.isoAlpha2ToCountryName().get(country),
-                    maxVal == null ? null : Math.round(maxVal),
-                    minVal == null ? null :Math.round(minVal),
-                    index == null ? null : Math.round(index)
+                    "Kraj: %s\n  Sezon z najwyższą średnią zgonów: %s (%d)\n  Sezon z najniższą średnią zgonów: %s (%d)\n  Różnica sezonowa: %d\n-----------------------------\n",
+                    CountryMapper.isoAlpha2ToCountryName().getOrDefault(country, country),
+                    maxSeason, maxVal == null ? 0 : Math.round(maxVal),
+                    minSeason, minVal == null ? 0 : Math.round(minVal),
+                    index == null ? 0 : Math.round(index)
             );
             System.out.print(line);
             report.append(line);
@@ -126,5 +179,6 @@ public class MortalityAnalysis {
         }
     }
 }
+
 
 
